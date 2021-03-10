@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+Perfil do Cliente
+{% endblock title %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <ul class="list-group">
+            <li class="list-group-item">Informações: {{Cliente.info}}</li>
+            <li class="list-group-item">Status: {{Cliente.Status}}</li>
+            <li class="list-group-item">Lembretes: {{Cliente.Lembre}}</li>
+            <li class="list-group-item">Centro de Custos: {{Cliente.marca}}</li>
+            <li class="list-group-item">Tags:
+                {% for Tags in cliente.Tags.all %}
+                    <a href="{% url 'categoria_produto' pk=Tags.pk %}">{{Tags}}</a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock content %}

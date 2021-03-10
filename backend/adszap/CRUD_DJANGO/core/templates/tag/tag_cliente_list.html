@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Listagem de Clientes
+{% endblock title %}
+
+{% block content %}
+<div class="col-lg-12">
+    <h2>Clientes por tag {{ tags }}</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Descrição do Produto</th>
+          <th>Preço do Produto</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for cliente in Clientes %}
+        <tr>
+          <td>{{ cliente.info }}</td>
+          <td>{{ cliente.Tags }}</td>
+            <td>{{ cliente.Status }}</td>
+            <td>{{ cliente.Lembre }}</td>
+            <td>{{ cliente.C_custos }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+{% endblock content %}
+
+
